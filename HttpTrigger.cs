@@ -18,9 +18,6 @@ namespace github_action_testfunctionapp_dotnetcore
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            byte[] input = File.ReadAllBytes("host.json");
-            Snappy.Encode(input);
-
             log.LogInformation("Sucessfully loaded IronSnappy");
 
             string responseMessage = "Hello Functions World!";
